@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main()=> runApp(MiCardApp());
@@ -10,6 +11,7 @@ class MiCardApp extends StatelessWidget {
         backgroundColor: Colors.teal,
         body: SafeArea(
             child:Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 CircleAvatar(
                   radius: 60.0,
@@ -35,40 +37,41 @@ class MiCardApp extends StatelessWidget {
                     fontSize: 20.0
                   ),
                 ),
-                Container(
-                  color: Colors.white,
-                  padding: EdgeInsets.all(10.0),
-                  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0 ),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(
-                        Icons.phone,
-                        color: Colors.teal,
-                      ),
-                      SizedBox(width: 10.0,),
-                      Text(
-                        '+256 753 307 626'
-                      ),
-                    ],
+                SizedBox(
+                  height: 10.0,
+                  width: 150.0,
+                  child: Divider(
+                    color: Colors.teal.shade100,
                   ),
                 ),
-//                SizedBox(height: 10.0,),
-                Container(
+                Card(
                   color: Colors.white,
-                  padding: EdgeInsets.all(10.0),
+                  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0 ),
+                  child: ListTile(
+                    leading:Icon(
+                      Icons.phone,
+                      color: Colors.teal,
+                    ),
+                    title: Text(
+                        '+256 753 307 626'
+                    ),
+                  )
+                ),
+//                SizedBox(height: 10.0,),
+                Card(
                   margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(
-                        Icons.email,
-                        color: Colors.teal.shade600,
-                      ),
-                      SizedBox(width: 10.0,),
-                      Text(
-                        'fitzerkisakyamukama03@gmail.com'
-                      )
-                    ],
-                  ),
+                    child: ListTile(
+                       leading: Icon(
+                          Icons.email,
+                          color: Colors.teal.shade600,
+                        ),
+                        title: Text(
+                          'fitzerkisakyamukama03@gmail.com',
+                          style: TextStyle(
+                            fontSize: 15.0
+                          ),
+                        ),
+                    ),
                 )
               ],
             )
@@ -77,3 +80,5 @@ class MiCardApp extends StatelessWidget {
     );
   }
 }
+
+
